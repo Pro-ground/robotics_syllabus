@@ -1,0 +1,37 @@
+---
+description: Plain language and jargon control for course material and chat replies
+alwaysApply: true
+---
+
+# Plain language
+
+This repository is a self-study syllabus. Assume the reader has no prior knowledge of the subject being taught. These rules apply to chat replies and to every file that forms course material.
+
+## Rules
+
+- **Introduce a term before using it bare.** On first use, give the plain-language meaning at the point of use, then name the term. Do not name it first and explain later.
+- **A term counts as introduced only where the reader has already been.** Check where it was defined. A term introduced in module 5 cannot be assumed in module 2, and a term introduced later in a document cannot be assumed earlier in it.
+- **Never explain one unintroduced term with another.** If a definition needs jargon, define that jargon first or rewrite the definition without it.
+- **Expand acronyms and initialisms on first use**, every document.
+- **Prefer the plain description when the term adds nothing.** Introduce the term when the reader will meet it in datasheets, tutorials, error messages or forum answers, and say that is why they need it.
+- **Avoid domain colloquialisms** even after the underlying concept is introduced, unless the reader will encounter the phrase elsewhere and needs to recognise it. In electronics these include "rail", "tie it high", "hangs off the supply", "sink current", "the magic smoke", "bit-bang".
+- **Do not use a term in a heading before the body has introduced it.**
+- **In chat, assume nothing has been introduced** unless it appears in the material the reader has covered or earlier in the conversation.
+
+## Examples
+
+Avoid: "The pin is floating, so add a pull-up to the rail."
+
+Prefer: "With the switch open, the pin connects to nothing at all and its voltage is undefined. This is called **floating**."
+
+Avoid: "Decouple the supply to prevent brownout."
+
+Prefer: "Put a capacitor next to the chip's power pins. It holds a small reserve of charge and releases it the moment the supply dips, which stops the chip resetting."
+
+Avoid: "V_f is around 2 V for a red LED."
+
+Prefer: "A diode drops a roughly fixed voltage once it starts conducting. That drop is called the **forward voltage**, written V_f, and for a red LED it is around 2 V."
+
+## Check before finishing
+
+Reread the output and list every technical term in it. For each one, confirm it was introduced earlier in the same document, in a module the reader has already completed, or earlier in the same reply. Introduce or remove anything left over.

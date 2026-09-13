@@ -1,0 +1,50 @@
+Robotics Engineering Pathway — index
+====================================
+
+This is the restructured 12-month syllabus. Start at
+00-introduction/00-introduction.md.
+The file named Syllabus is the original 6-month article, kept for reference.
+
+Modules live in folders named by number and title. Open the markdown file
+inside the folder for that module.
+
+Time model
+----------
+- Standard: 12 months at 12–15 hours/week, from zero electronics.
+- Fast: 6 months at 15–20 hours/week if you already write Python and live
+  in a Linux terminal. Skip only items tagged Fast-path skip.
+- Hours in the modules include failed prints and bring-up, not watch time.
+
+Pathway
+-------
+Trunk (everyone, in order)
+  00-introduction/00-introduction.md
+  01-electronics-and-tools/01-electronics-and-tools.md
+      01-electronics-and-tools/01-falstad-exercises.md
+  02-microcontrollers-and-first-robots/02-microcontrollers-and-first-robots.md
+  03-mechanical-design-and-cad/03-mechanical-design-and-cad.md
+  04-foundations-linux-cpp-math/04-foundations-linux-cpp-math.md
+      04-foundations-linux-cpp-math/python_practice/   (Module 4 coding drills)
+  05-ros2-core/05-ros2-core.md
+  06-shared-labs-control-perception-planning/06-shared-labs-control-perception-planning.md
+  07-integration-capstone/07-integration-capstone.md
+
+One track (pick after module 07)
+  08-track-autonomy/08-track-autonomy.md
+  09-track-embedded/09-track-embedded.md
+  10-track-learning/10-track-learning.md
+
+Then
+  11-portfolio-and-career/11-portfolio-and-career.md
+
+Tags
+----
+Mandatory        Required for the milestone.
+Optional         Depth. Skip if the calendar says so.
+Fast-path skip   Standard learners still do these.
+
+Success
+-------
+Build at least six working projects. Polish three for applications
+(video, metrics, "What broke and how I fixed it"). Depth in one track,
+literacy in the rest. This is entry, not senior.
