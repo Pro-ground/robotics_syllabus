@@ -65,20 +65,20 @@
 # motor_command(0.5, 0.5)    ->  "stop"
 
 # ----- EXERCISE -----
-def clamp(value:int, low:int, high:int) -> int:
-    if value < low: return low
-    elif value > high: return high
-    else: return value
 
-def in_deadband(value:int, centre:int, width:int)-> bool:
-    if abs(centre) + abs(width) >= abs(value): return True
-    else: return False 
+def clamp(value, low, high):
+  if value < low: return low
+  elif value > high: return high
+  else: return value
+
+def in_deadband(value, centre, width):
+  if abs(width) >= abs(value - centre):return True
+  else: return False
 
 def motor_command(error, deadband_width):
-  if abs(error) <= deadband_width: return "stop"
-  elif error > 0: return "forward"
-  else: return "backward"
-
+  if abs(error) <= deadband_width: return 'stop'
+  elif error > 0: return 'forward'
+  else: return 'backward'
 
 #----- ASSERTION ------
 
