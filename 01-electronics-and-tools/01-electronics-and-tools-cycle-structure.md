@@ -176,23 +176,36 @@ That last section is what makes a repo look like engineering instead of a tutori
 
 **Mandatory unless Fast-path skip.** Complete the Python practice exercises in `1.6_python_practice/` before the capstone task. Each exercise has a spec, a "What you will need" list, and assertions — run the file to check your work.
 
-Do them in numbered order:
+Do them in numbered order. Each write-in file has a matching `*_answers.py` if you get stuck. A `consolidation` file is a placeholder: fill it in after the files above it.
 
 1. `001_format_pick.py` — functions and lists
 2. `002_decisions.py` — `if` / `else` on a sensor value
 3. `003_loops.py` — `for`, `while`, and `range`
 4. `004_timed_loop.py` — period, leftover sleep, and a time step (`dt`)
 5. `005_angles.py` — degrees, radians, distance, heading
-6. `006_file_io_json.py` — CSV in, JSON out
-7. `007_error_handling.py` — retries and your own error type
-8. `008_drive_log.py` — put 001–007 together: clean a CSV drive log, replay it, write JSON
-9. `009_reading_class.py` — classes
-10. `010_env_pip.py` — virtual environments and pip
-11. `011_serial.py` — parse lines as if they came from a microcontroller
-12. `012_aggregate_sensors.py` — group readings and compute stats with loops
-13. `013_numpy_basics.py` — arrays, variance, moving average
-14. `014_numpy_robotics.py` — rotate a point, combine two moves, blend gyro and accelerometer angles
-15. `015_imu_heading.py` — put the whole folder together: estimate heading from a fake motion-sensor log
+6. `006_dicts_copy.py` — dictionaries and a copy you made on purpose
+7. `007_env_pip.py` — virtual environments and pip
+8. `008_modules.py` — import a file; run only as the main program
+9. `009_pose_workshop.py` — pose, twist, and a short history
+10. `010_consolidation_pose_workshop.py` — placeholder: Pose Workshop
+11. `011_file_io_json.py` — CSV in, JSON out
+12. `012_error_handling.py` — retries and a named error
+13. `013_config_clock.py` — settings file; a clock that only moves forward
+14. `014_function_tests.py` — tests in their own functions
+15. `015_drive_log.py` — clean a CSV drive log, replay it, write JSON
+16. `016_consolidation_log_parser.py` — placeholder: Log Parser
+17. `017_numpy_basics.py` — arrays, variance, moving average
+18. `018_numpy_robotics.py` — rotate a point, combine two moves, blend two angle guesses
+19. `019_kinematics.py` — wrap an angle, transform a point, step a pose
+20. `020_consolidation_kinematics_library.py` — placeholder: Kinematics Library
+21. `021_pub_sub.py` — send and receive on a named stream
+22. `022_stamps_frames.py` — stamp, frame name, range and angle to x, y
+23. `023_two_node_stack.py` — fake scan in, command out, stop distance
+24. `024_consolidation_two_node_stack.py` — placeholder: Two-Node Stack
+25. `025_diff_drive.py` — odometry and a limited command toward a point
+26. `026_watchdog.py` — zero the command if input is stale or not finite
+27. `027_closed_loop.py` — one step: scan, command, limits, timeout, odometry
+28. `028_consolidation_closed_loop.py` — placeholder: Closed Loop
 
 **Assessment criteria:**
 
@@ -286,7 +299,7 @@ Given a 9V battery, a 1 kΩ resistor, and an LED with a forward voltage of 2V, c
 
 | Resource                              | Format        | Why                   |
 | ------------------------------------- | ------------- | --------------------- |
-| `1.6_python_practice/006_file_io_json.py` | Exercise file | CSV read + JSON write |
+| `1.6_python_practice/011_file_io_json.py` | Exercise file | CSV read + JSON write |
 
 
 **Task:**

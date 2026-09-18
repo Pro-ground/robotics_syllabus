@@ -1,18 +1,15 @@
-# Problem 8 — clean a drive log and replay it
-# Write a single file, e.g. 008_drive_log.py. No extra packages, only the stdlib.
+# Problem 15 — clean a drive log and replay it
 #
-# This file is one short task, not a new topic. It asks you to use the 
-# skills and knowledge 001–007 together: format a reading, decide, loop, keep time, 
-# wrap an angle, read a CSV file (comma-separated values: plain text with a header
-# row and commas between fields), skip bad input, and write JSON (a text
-# format for lists and dictionaries).
+# This file is one short task, not a new topic. It asks you to use
+# 001–012 together: format a reading, decide, loop, keep time, wrap an
+# angle, read a CSV file, skip bad input, and write JSON.
 #
 # Do not import from the earlier files. You may write small helper
 # functions. Do not call time.sleep; call the sleep_fn you were given.
 #
 # What you will need
 #
-# Packages: math and json from the standard library. csv is optional.
+# Packages: math and json from the standard library.
 #
 # Ideas to have in place before you start:
 # - A robot log is often a CSV file with some empty or broken lines.
@@ -25,13 +22,33 @@
 #   pass ran long, wait 0.0 seconds.
 #
 # Tools to look up if you do not know them yet:
-# - open and a with block (from 006)
-# - try / except around float(...) (from 007)
+# - open and a with block (from 011)
+# - try / except around float(...) (from 012)
 # - math.hypot for straight-line distance (from 005)
 # - now_fn / sleep_fn / leftover wait (from 004)
-# - json.dumps with indent=2 (from 006)
+# - json.dumps with indent=2 (from 011)
 #
 # You do not need: NumPy, classes, or a real robot.
+#
+# Snippets
+#
+#   try:
+#       x = float(parts[0])
+#   except ValueError:
+#       continue
+#
+#   heading = wrap_degrees(heading)
+#   if range_m < 0.0:
+#       range_m = 0.0
+#   if range_m > 10.0:
+#       range_m = 10.0
+#
+#   leftover = period - elapsed
+#   if leftover < 0:
+#       leftover = 0.0
+#   sleep_fn(leftover)
+#
+# ----- EXERCISE -----
 #
 # 1. load_drive_csv(filename)
 #    Read a CSV file whose first line is the header:
@@ -52,12 +69,22 @@
 #        otherwise "forward"
 #    Return the list of dictionaries in file order. A file with only a
 #    header, or with no good rows, returns an empty list.
-#
+#    Your answer:
+
+def load_drive_csv(filename):
+    pass
+
+
 # 2. write_drive_json(rows, filename)
 #    Write rows (a list of dictionaries) to a JSON file.
 #    Use json.dumps with indent=2. End the file with a newline.
 #    Return None.
-#
+#    Your answer:
+
+def write_drive_json(rows, filename):
+    pass
+
+
 # 3. process_drive_log(csv_filename, json_filename, period, now_fn, sleep_fn)
 #    Load the CSV with load_drive_csv. Then replay each loaded row at a
 #    fixed period, the same way as 004:
@@ -72,41 +99,19 @@
 #    empty, do not call now_fn or sleep_fn.
 #    After the replay, write the loaded rows with write_drive_json.
 #    Return the same list of dictionaries.
-#
-#
-# Examples
-#
-# # One good row: heading 190 wraps to -170. range 0.15 stays 0.15, so
-# # command is "stop". Distance from (0, 0) to (3, 4) is 5.
-# # label is "range: 0.15 m"
-#
-# # range 12.0 becomes 10.0 and command is "forward"
-# # range -1.0 becomes 0.0 and command is "stop"
-# # heading -190 wraps to 170. heading 360 wraps to 0.
-#
-# # Fake clock: first now_fn call returns 0.0, second returns 0.005,
-# # then 1.0 and 1.03. period is 0.02. Two good rows sleep 0.015 then 0.0.
-#
-#
-# How you know you are done
-#
-# Put this at the bottom of the same file and run
-#   python 008_drive_log.py
-# All of it should print ok and not raise.
-#
+#    Your answer:
 
-# ----- EXERCISE -----
-# Write your code below.
+def process_drive_log(csv_filename, json_filename, period, now_fn, sleep_fn):
+    pass
 
 
 # ----- ASSERTION ------
-#
 
 import json
 import os
 
-test_csv = "008_test_drive.csv"
-test_json = "008_test_drive.json"
+test_csv = "015_test_drive.csv"
+test_json = "015_test_drive.json"
 
 with open(test_csv, "w") as f:
     f.write("x,y,heading_deg,range_m\n")
@@ -176,18 +181,18 @@ assert abs(sleeps[3] - 0.02) < 1e-12
 assert times == []
 
 try:
-    load_drive_csv("008_does_not_exist.csv")
+    load_drive_csv("015_does_not_exist.csv")
     assert False, "Should have raised FileNotFoundError"
 except FileNotFoundError:
     pass
 
-header_only = "008_test_empty.csv"
+header_only = "015_test_empty.csv"
 with open(header_only, "w") as f:
     f.write("x,y,heading_deg,range_m\n")
 empty_sleeps = []
 empty_rows = process_drive_log(
     header_only,
-    "008_test_empty.json",
+    "015_test_empty.json",
     0.02,
     lambda: 0.0,
     empty_sleeps.append,
@@ -198,6 +203,6 @@ assert empty_sleeps == []
 os.remove(test_csv)
 os.remove(test_json)
 os.remove(header_only)
-os.remove("008_test_empty.json")
+os.remove("015_test_empty.json")
 
 print("ok")

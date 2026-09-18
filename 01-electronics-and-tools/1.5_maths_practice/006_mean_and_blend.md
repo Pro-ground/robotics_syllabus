@@ -1,6 +1,6 @@
 # 006 — Mean of readings, and blending two guesses
 
-Do `004` and `005` first. Do this file before the Python files that average or fuse readings (`012_aggregate_sensors.py`, `013_numpy_basics.py`, `014_numpy_robotics.py`). Module 2 uses the blend on a real accelerometer and gyroscope.
+Do `004` and `005` first. Do this file before the Python files that average or fuse readings (`017_numpy_basics.py`, `018_numpy_robotics.py`). Module 2 uses the blend on a real accelerometer and gyroscope.
 
 The **mean** of a list of numbers is their sum divided by how many there are. For three temperature readings 21.5, 22.0, and 21.8:
 

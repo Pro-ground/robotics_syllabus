@@ -1,122 +1,46 @@
-# Problem 3 — walk through values one at a time
+# Problem 3 — go through values one at a time
 #
-# A loop repeats a piece of code. Robots spend most of their time in a loop:
-# read, decide, act, repeat. You will use these same loop forms over and over again throughout all code you write for programming robots.
-#
-# What you will need
-#
-# Packages: none. Use only what Python gives you with no install.
-#
-# Ideas to have in place before you start:
-# - A for loop takes each item from a list, one by one.
-# - range(n) gives the numbers 0, 1, 2, ... up to but not including n.
-#   range(start, stop, step) can skip; look that up if you need it.
-# - A while loop keeps going as long as a condition is True.
-# - You build a result list with append.
-# - len() gives the length of a list
-#
-# Tools to look up if you do not know them yet:
-# - for item in some_list
-# - for i in range(...)
-# - while
-# - list.append
-#
-# Do not use: sum(), min(), max(), or a list comprehension (the one-line
-# form [ ... for ... in ... ]). Write the long form so you can see each step.
-# You may use len() on a list.
-#
-#
-# ----- EXERCISES -----
-#
-# 1. running_total(values)
-#    values is a list of numbers.
-#    Return a new list the same length. Each item is the sum of values
-#    from the start up to and including that position.
-#    An empty list returns an empty list.
-# Examples
-#
-# running_total([1, 2, 3, 4])  ->  [1, 3, 6, 10]
-# running_total([])            ->  []
-# running_total([5])           ->  [5]
-
-def running_total(values):
-    if not values:
-        return []
-    current_sum = 0
-    values_list = []
-    for value in values:
-        current_sum += value
-        values_list.append(current_sum)
-    return values_list
-#
-# 2. first_index_at_or_above(values, threshold)
-#    Walk values from the left. Return the position (starting at 0) of the
-#    first number that is greater than or equal to threshold.
-#    Return None if no number qualifies.
-#
-# Examples
-#
-# first_index_at_or_above([1, 3, 7, 2], 7)   ->  2
-# first_index_at_or_above([1, 3, 7, 2], 8)   ->  None
-# first_index_at_or_above([5, 1], 5)         ->  0
-
-
-def first_index_at_or_above(values, threshold):
-    for index, value in enumerate(values):
-        if value >= threshold:
-            return index
-
-# 3. countdown_steps(start)
-#    start is a positive integer.
-#    Using a while loop, return a list [start, start - 1, ..., 1].
-#    Do not include 0. If start is 0 or negative, return an empty list.
-# 
-# Examples
-#
-# countdown_steps(4)   ->  [4, 3, 2, 1]
-# countdown_steps(1)   ->  [1]
-# countdown_steps(0)   ->  []
-
-
-def countdown_steps(start):
-    countdown = start
-    countdown_list = []
-    if start <= 0:
-        return []
-    else:
-        countdown_list.append(start)     
-        while countdown > 1:
-            countdown -= 1
-            countdown_list.append(countdown)
-    return countdown_list
-
-# 4. every_nth(values, n)
-#    n is an integer greater than or equal to 1.
-#    Return a new list of the items at positions 0, n, 2n, 3n, ... as long
-#    as the position is still inside the list.
-#    Use range to produce those positions. Do not walk every item and then
-#    skip with if, unless you also use range for the positions.
-#
-# Examples
-#
-# every_nth(["a", "b", "c", "d", "e"], 2)  ->  ["a", "c", "e"]
-# every_nth([10, 20, 30], 1)               ->  [10, 20, 30]
-# every_nth([10, 20, 30], 3)               ->  [10]
-#
-#
-#
+# This file is the worked answer for 003_loops.py. Try that file first.
 
 # ----- EXERCISE -----
 
+def running_total(values):
+    totals = []
+    current = 0
+    for value in values:
+        current = current + value
+        totals.append(current)
+    return totals
+
+
+def first_index_at_or_above(values, threshold):
+    i = 0
+    for value in values:
+        if value >= threshold:
+            return i
+        i = i + 1
+    return None
+
+
+def countdown_steps(start):
+    if start <= 0:
+        return []
+    steps = []
+    n = start
+    while n >= 1:
+        steps.append(n)
+        n = n - 1
+    return steps
+
 
 def every_nth(values, n):
-    new_list = []
+    picked = []
     for i in range(0, len(values), n):
-        new_list.append(values[i])
-    return new_list
+        picked.append(values[i])
+    return picked
+
 
 # ----- ASSERTION ------
-#
 
 assert running_total([1, 2, 3, 4]) == [1, 3, 6, 10]
 assert running_total([]) == []
@@ -133,11 +57,6 @@ assert countdown_steps(4) == [4, 3, 2, 1]
 assert countdown_steps(1) == [1]
 assert countdown_steps(0) == []
 assert countdown_steps(-3) == []
-
-assert countdown_steps_v2(4) == [4, 3, 2, 1]
-assert countdown_steps_v2(1) == [1]
-assert countdown_steps_v2(0) == []
-assert countdown_steps_v2(-3) == []
 
 assert every_nth(["a", "b", "c", "d", "e"], 2) == ["a", "c", "e"]
 assert every_nth([10, 20, 30], 1) == [10, 20, 30]
