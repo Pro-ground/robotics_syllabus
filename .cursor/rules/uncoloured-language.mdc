@@ -1,0 +1,45 @@
+---
+description: Ban syllabus labels, AI filler, and other words that make the reader pause
+alwaysApply: true
+---
+
+# Uncoloured language
+
+This repository is a self-study syllabus. Prose in course files and in chat should not make the reader stop, decode a label, or feel talked down to.
+
+## How to decide a word does not belong
+
+Do not precompute a dictionary. Add a word when it fails one of these:
+
+- The reader has to pause on it.
+- The reader has to open another file to find out what it means.
+- It is there to sound expert, structured, or kind, not to carry information.
+- It is a label for the syllabus itself (a track, a skip, a numbering scheme) rather than for the subject being taught.
+
+When you add a word, include obvious forms: plural, hyphen, capitalisation, and close paraphrases of the same boilerplate.
+
+## Avoid (and their forms)
+
+- **Fast path / Fast-path / fastpath** and any “skip if you already know this” banner that uses it
+- **Tier 0, Tier 1, Tier 2, Tier 3** and other numbered tiers the reader has not been taught in that document
+- **Trunk** for core modules
+- **This is N of M** and **do the files in this folder in numbered order** (the filename is enough)
+- Empty expert tone: *leverage, utilize, robust, seamless, comprehensive, delve, landscape, it is worth noting*
+- Talking down: *simply, just, obviously, trivially, as you know, as you will recall*
+- list of words to avoid: "walk", jargon, programmer slang, 
+
+## Prefer
+
+State the requirement in the same sentence. If a file depends on another file, name that file. If a word is not doing work, delete it.
+
+Avoid: `Mandatory unless Fast-path skip.`
+
+Prefer: `Complete the Python files in 1.6_python_practice/ before the capstone.`
+
+Avoid: `This is 006 of 015.`
+
+Prefer: (nothing)
+
+Avoid: `You simply open the file and parse it.`
+
+Prefer: `Open the file. Split each non-empty line on commas.`

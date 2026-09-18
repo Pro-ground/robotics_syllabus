@@ -6,7 +6,8 @@
 # unit for angle: 180 degrees is pi radians (about 3.14159). Datasheets and
 # later robot code mix both units.
 #
-# Do the files in this folder in numbered order. This is 005 of 013.
+# Do 1.5_maths_practice/005_angles_and_distance.md before this file. That
+# sheet is the numbers. This file is the same idea in Python.
 #
 # What you will need
 #
@@ -81,9 +82,46 @@
 #
 
 # ----- EXERCISE -----
-# Write your code below.
-#
 
+# 1. degrees_to_radians(deg)
+#    Convert deg to radians and return a float.
+import math
+
+def degrees_to_radians(deg):
+    return float(math.radians(deg))
+
+# 2. radians_to_degrees(rad)
+#    Convert rad to degrees and return a float.
+def radians_to_degrees(rad):
+    return float(math.degrees(rad))
+
+# 3. wrap_degrees(deg)
+#    Return an angle equal to deg, but shifted by whole turns of 360 so the
+#    result is in the range (-180, 180].
+#    That means 180 stays 180, and -180 becomes 180 (same direction).
+#    190 becomes -170. -190 becomes 170. 360 and 0 both become 0.
+
+def wrap_degrees(deg):
+     return 180 - (180 - deg) % 360
+
+# 4. distance(x1, y1, x2, y2)
+#    Return the straight-line distance between (x1, y1) and (x2, y2).
+
+def distance(x1, y1, x2, y2):
+    return math.hypot(x2 - x1, y2 - y1)
+
+# 5. heading_degrees(x, y)
+#    Return the heading of the point (x, y) from (0, 0), in degrees, wrapped
+#    with wrap_degrees.
+#    The positive x axis is 0. Positive y is 90. Negative x is 180.
+#    Negative y is -90.
+#    If x and y are both 0, return 0.0.
+
+def heading_degrees(x, y):
+    if x == 0 and y == 0:
+        return 0.0
+    degrees = math.degrees(math.atan2(y, x))
+    return wrap_degrees(degrees)
 
 # ----- ASSERTION ------
 #

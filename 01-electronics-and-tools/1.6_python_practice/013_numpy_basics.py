@@ -1,8 +1,7 @@
-# Problem 12 — NumPy basics
-# Write a single file, e.g. 012_numpy_basics.py. Requires NumPy.
+# Problem 13 — NumPy basics
+# Write a single file, e.g. 013_numpy_basics.py. Requires NumPy.
 #
-# Do the files in this folder in numbered order. This is 012 of 013.
-# Install NumPy in the virtual environment from 009 before you start.
+# Install NumPy in the virtual environment from 010 before you start.
 #
 # What you will need
 #
@@ -10,6 +9,7 @@
 # virtual environment if it is not already there.
 #
 # Ideas to have in place before you start:
+# - The mean of a list, from 1.5_maths_practice/006_mean_and_blend.md
 # - A NumPy array is a grid of numbers. A 1D array is a single row of
 #   values. A 2D array is rows and columns.
 # - Population variance is the average of the squared differences from
@@ -83,7 +83,7 @@
 # How you know you are done
 #
 # Put this at the bottom of the same file and run
-#   python 012_numpy_basics.py
+#   python 013_numpy_basics.py
 # All of it should print ok and not raise.
 #
 

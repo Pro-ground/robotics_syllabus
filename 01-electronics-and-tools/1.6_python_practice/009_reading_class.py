@@ -1,7 +1,6 @@
-# Problem 8 — reading sensor data with a class
-# Write a single file, e.g. 008_reading_class.py. No external packages, only the stdlib.
+# Problem 9 — reading sensor data with a class
+# Write a single file, e.g. 009_reading_class.py. No external packages, only the stdlib.
 #
-# Do the files in this folder in numbered order. This is 008 of 013.
 #
 # What you will need
 #
@@ -81,7 +80,7 @@
 # How you know you are done
 #
 # Put this at the bottom of the same file and run
-#   python 008_reading_class.py
+#   python 009_reading_class.py
 # All of it should print ok and not raise.
 #
 

@@ -1,8 +1,6 @@
 # Problem 7 — retries and error handling
 # Write a single file, e.g. 007_error_handling.py. No external packages, only the stdlib.
 #
-# Do the files in this folder in numbered order. This is 007 of 013.
-#
 # What you will need
 #
 # Packages: json and time from the standard library. No extra installs.

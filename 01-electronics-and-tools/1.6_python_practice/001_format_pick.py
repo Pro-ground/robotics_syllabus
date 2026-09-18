@@ -1,8 +1,4 @@
 # Problem 1 — format a reading and pick values
-# Write one file, e.g. 001_format_pick.py. Two small functions. No class, no
-# file I/O, no extra packages, no geometry.
-#
-# Do the files in this folder in numbered order. This is 001 of 013.
 #
 # What you will need
 #
@@ -18,21 +14,9 @@
 # Tools to look up if you do not know them yet:
 # - An f-string (a string that starts with f) or the format method, for
 #   putting values into text
-# - list.append, if you build a new list one item at a time
-# - A for loop, if you walk a list item by item (taught in 003; either
+# - list.append(), you build a new list one item at a time
+# - A for loop, which enables you to loop through a list item by item (taught in 003; either
 #   style is accepted here)
-#
-# You do not need: files, classes, or extra packages.
-#
-# 1. format_reading(name, value, unit)
-# Return one string in this exact shape (name, colon, space, value, space, unit):
-#   temp: 21.5 C
-# value may be an int or a float. Use it as-is; do not force extra zeros.
-#
-# 2. values_for(rows, name)
-# rows is a list of two-item lists: [sensor_name, number].
-# Return a new list of the numbers whose sensor name equals name, in the same order they appear.
-# Do not change rows.
 #
 # Examples
 # format_reading("temp", 21.5, "C")  ->  "temp: 21.5 C"
@@ -48,13 +32,23 @@
 
 # ----- EXERCISE -----
 
+# 1. format_reading(name, value, unit)
+# Return one string in this exact shape (name, colon, space, value, space, unit):
+#   temp: 21.5 C
+# value may be an int or a float. Use it as-is; do not force extra zeros.
+# Your answer:
+
 def format_reading(name, value, unit):
     return f"{name}: {value} {unit}"
 
+# 2. values_for(rows, name)
+# rows is a list of two-item lists: [sensor_name, number].
+# Return a new list of the numbers whose sensor name equals name, in the same order they appear.
+# Do not change rows.
+# Your answer:
 
 def values_for(rows, name):
     return [row[1] for row in rows if row[0] == name]
-
 
 # ----- ASSERTION ------
 

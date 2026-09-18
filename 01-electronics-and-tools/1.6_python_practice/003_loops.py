@@ -1,11 +1,7 @@
 # Problem 3 — walk through values one at a time
-# Write a single file, e.g. 003_loops.py. No external packages, only the stdlib.
 #
 # A loop repeats a piece of code. Robots spend most of their time in a loop:
-# read, decide, act, repeat. You will use these same loop forms again in
-# 004, 011, and later files.
-#
-# Do the files in this folder in numbered order. This is 003 of 013.
+# read, decide, act, repeat. You will use these same loop forms over and over again throughout all code you write for programming robots.
 #
 # What you will need
 #
@@ -17,7 +13,7 @@
 #   range(start, stop, step) can skip; look that up if you need it.
 # - A while loop keeps going as long as a condition is True.
 # - You build a result list with append.
-# - len() will get the length of a list
+# - len() gives the length of a list
 #
 # Tools to look up if you do not know them yet:
 # - for item in some_list
@@ -29,105 +25,48 @@
 # form [ ... for ... in ... ]). Write the long form so you can see each step.
 # You may use len() on a list.
 #
+#
+# ----- EXERCISES -----
+#
 # 1. running_total(values)
 #    values is a list of numbers.
 #    Return a new list the same length. Each item is the sum of values
 #    from the start up to and including that position.
 #    An empty list returns an empty list.
-#
-# 2. first_index_at_or_above(values, threshold)
-#    Walk values from the left. Return the position (starting at 0) of the
-#    first number that is greater than or equal to threshold.
-#    Return None if no number qualifies.
-#
-# 3. countdown_steps(start)
-#    start is a positive integer.
-#    Using a while loop, return a list [start, start - 1, ..., 1].
-#    Do not include 0. If start is 0 or negative, return an empty list.
-#
-# 4. every_nth(values, n)
-#    n is an integer greater than or equal to 1.
-#    Return a new list of the items at positions 0, n, 2n, 3n, ... as long
-#    as the position is still inside the list.
-#    Use range to produce those positions. Do not walk every item and then
-#    skip with if, unless you also use range for the positions.
-#
-#
 # Examples
 #
 # running_total([1, 2, 3, 4])  ->  [1, 3, 6, 10]
 # running_total([])            ->  []
 # running_total([5])           ->  [5]
-#
-# first_index_at_or_above([1, 3, 7, 2], 7)   ->  2
-# first_index_at_or_above([1, 3, 7, 2], 8)   ->  None
-# first_index_at_or_above([5, 1], 5)         ->  0
-#
-# countdown_steps(4)   ->  [4, 3, 2, 1]
-# countdown_steps(1)   ->  [1]
-# countdown_steps(0)   ->  []
-#
-# every_nth(["a", "b", "c", "d", "e"], 2)  ->  ["a", "c", "e"]
-# every_nth([10, 20, 30], 1)               ->  [10, 20, 30]
-# every_nth([10, 20, 30], 3)               ->  [10]
-#
-#
-# How you know you are done
-#
-# Put this at the bottom of the same file and run
-#   python 003_loops.py
-# All of it should print ok and not raise.
-#
 
-# ----- EXERCISE -----
-# 1. running_total(values)
-#    values is a list of numbers.
-#    Return a new list the same length. Each item is the sum of values
-#    from the start up to and including that position.
-#    An empty list returns an empty list.
 
-def running_total(values):
-    if not values:
-        return []
-    current_sum = 0
-    values_list = []
-    for value in values:
-        current_sum += value
-        values_list.append(current_sum)
-    return values_list
-
+#
 # 2. first_index_at_or_above(values, threshold)
 #    Walk values from the left. Return the position (starting at 0) of the
 #    first number that is greater than or equal to threshold.
 #    Return None if no number qualifies.
+#
+# Examples
+#
+# first_index_at_or_above([1, 3, 7, 2], 7)   ->  2
+# first_index_at_or_above([1, 3, 7, 2], 8)   ->  None
+# first_index_at_or_above([5, 1], 5)         ->  0
 
-def first_index_at_or_above(values, threshold):
-    for index, value in enumerate(values):
-        if value >= threshold:
-            return index
+
+
 
 # 3. countdown_steps(start)
 #    start is a positive integer.
 #    Using a while loop, return a list [start, start - 1, ..., 1].
 #    Do not include 0. If start is 0 or negative, return an empty list.
+# 
+# Examples
+#
+# countdown_steps(4)   ->  [4, 3, 2, 1]
+# countdown_steps(1)   ->  [1]
+# countdown_steps(0)   ->  []
 
-def countdown_steps(start):
-    countdown = start
-    countdown_list = []
-    if start <= 0:
-        return []
-    else:
-        countdown_list.append(start)     
-        while countdown > 1:
-            countdown -= 1
-            countdown_list.append(countdown)
-    return countdown_list
 
-def countdown_steps_v2(start):
-    if start <= 0:
-        return []
-    else:
-        return list(range(start, 0, -1))
 
 # 4. every_nth(values, n)
 #    n is an integer greater than or equal to 1.
@@ -135,12 +74,15 @@ def countdown_steps_v2(start):
 #    as the position is still inside the list.
 #    Use range to produce those positions. Do not walk every item and then
 #    skip with if, unless you also use range for the positions.
+#
+# Examples
+#
+# every_nth(["a", "b", "c", "d", "e"], 2)  ->  ["a", "c", "e"]
+# every_nth([10, 20, 30], 1)               ->  [10, 20, 30]
+# every_nth([10, 20, 30], 3)               ->  [10]
 
-def every_nth(values, n):
-    new_list = []
-    for i in range(0, len(values), n):
-        new_list.append(values[i])
-    return new_list
+
+
 
 # ----- ASSERTION ------
 #

@@ -11,7 +11,8 @@
 # The angle step here is the same idea as "angle = angle + gyro * dt" when
 # you later estimate tilt from a gyroscope.
 #
-# Do the files in this folder in numbered order. This is 004 of 013.
+# Do 1.5_maths_practice/004_rate_and_dt.md before this file. That sheet is
+# the numbers. This file is the same idea in Python.
 #
 # What you will need
 #
@@ -84,11 +85,53 @@
 
 # ----- EXERCISE -----
 # Write your code below.
-#
+
+
+# 1. leftover_sleep(elapsed, period)
+#    Both arguments are numbers of seconds, and both are greater than or
+#    equal to 0.
+#    Return how many seconds you should still wait so this pass lasts
+#    exactly period.
+#    If elapsed is already greater than or equal to period, return 0.0.
+#    Always return a float.
+
+def leftover_sleep(elapsed:int, period:int) -> int:
+    if elapsed >= period: return 0
+    else:
+        return period - elapsed
+
+# 2. step_angle(angle, gyro_dps, dt)
+#    angle is the current angle in degrees.
+#    gyro_dps is angular speed in degrees per second (positive or negative).
+#    dt is the time step in seconds.
+#    Return the new angle: the old angle plus (gyro_dps times dt).
+#    Do not wrap the angle; that is 005.
+ 
+def step_angle(angle, gyro_dps, dt):
+    return angle + (gyro_dps * dt)
+
+# 3. run_fixed_rate(n_steps, period, now_fn, sleep_fn, body_fn)
+#    Run a timed loop n_steps times. n_steps is an integer >= 0.
+#    For each step with index i (0, then 1, then 2, ...):
+#      - Record the start time by calling now_fn() with no arguments.
+#      - Call body_fn(i).
+#      - Record the time again with now_fn().
+#      - Compute elapsed as (time after the body) minus (start time).
+#      - Call sleep_fn(leftover) where leftover comes from leftover_sleep.
+#    Return None.
+#    If n_steps is 0, do nothing.
+
+def run_fixed_rate(n_steps, period, now_fn, sleep_fn, body_fn):
+    for i in range(n_steps):
+        start = now_fn()
+        body_fn(i)
+        finish = now_fn()
+        elapsed = finish - start
+        leftover = leftover_sleep(elapsed, period)
+        sleep_fn(leftover)
 
 
 # ----- ASSERTION ------
-#
 
 assert abs(leftover_sleep(0.005, 0.020) - 0.015) < 1e-12
 assert leftover_sleep(0.020, 0.020) == 0.0

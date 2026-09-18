@@ -1,7 +1,6 @@
-# Problem 11 — group sensor logs and compute stats
-# Write a single file, e.g. 011_aggregate_sensors.py. No external packages, only the stdlib.
+# Problem 12 — group sensor logs and compute stats
+# Write a single file, e.g. 012_aggregate_sensors.py. No external packages, only the stdlib.
 #
-# Do the files in this folder in numbered order. This is 011 of 013.
 # This file uses the loops from 003; it does not teach them for the first time.
 #
 # What you will need
@@ -61,7 +60,7 @@
 # How you know you are done
 #
 # Put this at the bottom of the same file and run
-#   python 011_aggregate_sensors.py
+#   python 012_aggregate_sensors.py
 # All of it should print ok and not raise.
 #
 
@@ -86,7 +85,7 @@
 import os
 
 # Create a test log file
-test_log = "011_test_log.txt"
+test_log = "012_test_log.txt"
 with open(test_log, "w") as f:
     f.write("temp 21.5 C\n")
     f.write("dist 0.4 m\n")

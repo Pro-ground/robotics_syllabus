@@ -1,7 +1,6 @@
-# Problem 9 — virtual environments and pip
-# Write a single file, e.g. 009_env_pip.py. Only the stdlib — no external packages.
+# Problem 10 — virtual environments and pip
+# Write a single file, e.g. 010_env_pip.py. Only the stdlib — no external packages.
 #
-# Do the files in this folder in numbered order. This is 009 of 013.
 #
 # What you will need
 #
@@ -96,7 +95,7 @@
 #
 #
 # 6. **Use the installed package.**
-#    Write a short Python script (in a new file called `009_test_import.py`)
+#    Write a short Python script (in a new file called `010_test_import.py`)
 #    that imports requests and prints the library's version string.
 #    Run it from inside the virtual environment.
 #
@@ -137,7 +136,7 @@
 #
 # If you want a minimal check you can run:
 #
-#    python 009_env_pip.py
+#    python 010_env_pip.py
 #
 # and see the text you wrote. This file is a lab worksheet, not a program
 # with auto-grading. The learning is in the doing, not in passing assertions.

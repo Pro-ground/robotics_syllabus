@@ -1,0 +1,5 @@
+"sensor,value,unit\n"
+"temp,21.5,C\n"
+"dist,0.4,m\n"
+"temp,22.0,C\n"
+"pressure,1013.25,hPa\n"

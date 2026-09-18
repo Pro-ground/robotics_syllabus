@@ -1,5 +1,5 @@
-# Problem 10 — read lines as if they came from a microcontroller
-# Write a single file, e.g. 010_serial.py. Graded functions use only the
+# Problem 11 — read lines as if they came from a microcontroller
+# Write a single file, e.g. 011_serial.py. Graded functions use only the
 # stdlib. The optional lab at the bottom uses the pyserial package.
 #
 # Serial here means a stream of text over a cable (usually USB). The
@@ -7,7 +7,6 @@
 # and turns it into numbers. You do not need a board for the graded
 # functions.
 #
-# Do the files in this folder in numbered order. This is 010 of 013.
 #
 # What you will need
 #
@@ -71,7 +70,7 @@
 # How you know you are done
 #
 # Put this at the bottom of the same file and run
-#   python 010_serial.py
+#   python 011_serial.py
 # All of it should print ok and not raise.
 # Then, if you have a board, fill in the optional lab comments.
 #

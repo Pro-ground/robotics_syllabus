@@ -1,15 +1,16 @@
-# Problem 13 — NumPy for robotics
-# Write a single file, e.g. 013_numpy_robotics.py. Requires NumPy.
+# Problem 14 — NumPy for robotics
+# Write a single file, e.g. 014_numpy_robotics.py. Requires NumPy.
 #
-# Do the files in this folder in numbered order. This is 013 of 013.
-# Do 005_angles.py and 012_numpy_basics.py first so degrees-versus-radians
+# Do 005_angles.py and 013_numpy_basics.py first so degrees-versus-radians
 # and arrays are not new at the same time as rotation.
+# 015 puts the whole folder together in one short motion-sensor log project.
 #
 # What you will need
 #
 # Packages: NumPy only (import numpy as np).
 #
 # Ideas to have in place before you start:
+# - Blending two angle guesses, from 1.5_maths_practice/006_mean_and_blend.md
 # - A 2D rotation matrix is a 2-by-2 grid of numbers that turns a point
 #   around the origin. You build it from cos and sin of the angle.
 # - NumPy's cos and sin use radians. Convert from degrees first (005).
@@ -29,7 +30,7 @@
 # You do not need: SciPy, a real motion sensor, or to derive the rotation
 # matrix from scratch; the spec writes the grid down.
 #
-# These functions use the same NumPy foundations from Problem 12 but applied
+# These functions use the same NumPy foundations from Problem 13 but applied
 # to the actual objects that appear in robotics: rotation matrices, vectors,
 # and noisy sensor data.
 #
@@ -91,7 +92,7 @@
 # How you know you are done
 #
 # Put this at the bottom of the same file and run
-#   python 013_numpy_robotics.py
+#   python 014_numpy_robotics.py
 # All of it should print ok and not raise.
 #
 
